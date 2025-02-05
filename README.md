@@ -97,9 +97,9 @@ NB! For production use, ensure you have correct sector keys for reading and writ
 | Equipment                             | Component Image                                                                      | Reference                                                                                                                                     | Function                                                                                                                                                                      |
 | ------------------------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Arduino Mega R3                       | <img src="img/arduino-mega.jpg" width="100" height="70">                           | [Arduino Mega R3](https://store.arduino.cc/products/arduino-mega-2560-rev3)                                                                   | Main microcontroller responsible for interfacing with the RFID shield, reading tag data, and sending Serial messages to the M5Stamp C3U.                                      |
-| Adafruit PN532 RFID Shield            | <img src="image/pn532-shield.jpg" width="100" height="70">                           | [Adafruit PN532](https://www.adafruit.com/product/789)                                                                                       | High-frequency (13.56 MHz) RFID reader capable of reading Mifare Classic and various other tag types; mounts directly on the Arduino Mega or is wired via SPI/Serial.        |
-| M5Stamp C3U (ESP32)                   | <img src="image/m5stamp-c3u.jpg" width="100" height="70">                            | [M5Stamp C3U]()                                                                                    | Compact Wi-Fi enabled microcontroller (ESP32 based) that receives tray-count updates from the Arduino and forwards them to a backend server over a wireless network.         |
-| Mifare Classic RFID tags              | <img src="image/mifare-tag.jpg" width="80" height="50">                              | [Mifare Classic Tags](https://www.nxp.com/products/rfid-nfc/mifare-classic)                                                                   | Passive tags operating at 13.56 MHz, affixed to trays (which hold 30 glasses) so that glass usage can be tracked by detecting the presence of these tags.                    |
+| Adafruit PN532 RFID Shield            | <img src="img/pn532-shield.jpg" width="100" height="70">                           | [Adafruit PN532](https://www.adafruit.com/product/789)                                                                                       | High-frequency (13.56 MHz) RFID reader capable of reading Mifare Classic and various other tag types; mounts directly on the Arduino Mega or is wired via SPI/Serial.        |
+| M5Stamp C3U (ESP32)                   | <img src="img/m5stamp-c3u.jpg" width="100" height="70">                            | [M5Stamp C3U]()                                                                                    | Compact Wi-Fi enabled microcontroller (ESP32 based) that receives tray-count updates from the Arduino and forwards them to a backend server over a wireless network.         |
+| Mifare Classic RFID tags              | <img src="img/mifare-tag.jpg" width="80" height="50">                              | [Mifare Classic Tags](https://www.nxp.com/products/rfid-nfc/mifare-classic)                                                                   | Passive tags operating at 13.56 MHz, affixed to trays (which hold 30 glasses) so that glass usage can be tracked by detecting the presence of these tags.                    |
 
 ---
 
@@ -108,7 +108,7 @@ NB! For production use, ensure you have correct sector keys for reading and writ
 Below is an overview illustrating how the components interconnect:
 
 <p align="center">
-  <img style="width:50%;" src="image/sensiot_schematic.png" alt="Schematic Diagram Placeholder">
+  <img style="width:100%;" src="img/schema.png" alt="Schematic Diagram Placeholder">
 </p>
 
 1. The PN532 Shield can stack directly onto the Arduino Mega or be wired through SPI/Serial pins.  
@@ -122,6 +122,9 @@ Below is an overview illustrating how the components interconnect:
 Once assembled, each tray displaying a valid Mifare Classic tag triggers an increment in the count registered by the Arduino Mega when brought near the PN532 reader. The tray count is then transferred to the M5Stamp C3U and ultimately to a backend server. By tracking the number of trays in circulation (and correlating each tray with 30 glasses), it is possible to derive how many glasses are being used during a given day, thereby providing an approximate measure of the number of people dining in the cafeteria.
 
 ---
+
+<img src="img/sensiot.png" width="560" >               
+
 
 # Video
 Demonstration:
