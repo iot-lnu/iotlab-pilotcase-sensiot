@@ -24,7 +24,7 @@ The project is built around an Arduino Mega R3 combined with an Adafruit PN532 R
 
 # Purpose
 
-The objective of this pilot case is to determine, in near real-time, the number of meals served in the school cafeteria. Since each tray includes a fixed number of glasses (30), tracking the circulation of these trays provides an efficient way to calculate usage without manual counting. Data on how many trays are in use can be sent to a central server, aiding in resource planning and helping the cafeteria staff monitor daily volume and trends more accurately.
+The objective of this pilot case is to determine, in near real-time, the number of meals served in the school. Since each tray includes a fixed number of glasses (30), tracking the circulation of these trays provides an efficient way to calculate usage without manual counting. Data on how many trays are in use can be sent to a central server, aiding in resource planning and helping the staff monitor daily volume and trends more accurately.
 
 ---
 
@@ -119,7 +119,7 @@ Below is an overview illustrating how the components interconnect:
 
 # Results
 
-Once assembled, each tray displaying a valid Mifare Classic tag triggers an increment in the count registered by the Arduino Mega when brought near the PN532 reader. The tray count is then transferred to the M5Stamp C3U and ultimately to a backend server. By tracking the number of trays in circulation (and correlating each tray with 30 glasses), it is possible to derive how many glasses are being used during a given day, thereby providing an approximate measure of the number of people dining in the cafeteria.
+Once assembled, each tray displaying a valid Mifare Classic tag triggers an increment in the count registered by the Arduino Mega when brought near the PN532 reader. The tray count is then transferred to the M5Stamp C3U and ultimately to a backend server. By tracking the number of trays in circulation (and correlating each tray with 30 glasses), it is possible to derive how many glasses are being used during a given day, thereby providing an approximate measure of the number of people dining at the school.
 
 ---
 
