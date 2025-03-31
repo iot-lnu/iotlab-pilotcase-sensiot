@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  flask-app:
+    build: .
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    volumes:
+      - db_data:/var/lib/mysql
+
+  node-app:
+    build: ./node-app
+    ports:
+      - "3010:3010"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=myuser
+      - DB_PASSWORD=mypassword
+      - DB_DATABASE=mydatabase
+
+
+volumes:
+  db_data:
